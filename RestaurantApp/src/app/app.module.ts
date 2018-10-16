@@ -10,6 +10,7 @@ import { RecipiesListComponent } from './component/recipies/recipies-list/recipi
 import { RecipiesItemComponent } from './component/recipies/recipies-list/recipies-item/recipies-item.component';
 import { ShoppingEditComponent } from './component/shopping-list/shopping-edit/shopping-edit.component';
 import { ingredientsService } from './services/ingredients.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ingredientsService } from './services/ingredients.service';
     ShoppingEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [ingredientsService],
   bootstrap: [AppComponent]

@@ -20,6 +20,7 @@ export class ingredientsService{
       //Una vez obtenidos se debene guardar en el arreglo, cpn un foreach desde donde se obtendran con una constante i
       addIngredients(auxIngredients: Ingredient[]){
         for (const i of auxIngredients){
+        //Aqui agregar el find y la condición
           this.ingredients.push(i);
         }
       }
