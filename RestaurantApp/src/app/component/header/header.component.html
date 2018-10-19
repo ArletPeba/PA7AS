@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a href="#" class="navbar-brand">Recipies book</a>
+  <a  class="navbar-brand">Recipies book</a>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav navbar-left">
-      <li class="nav-item"><a href="#" class="nav-link" (click)= "onSelect('recipe')">Recipies</a></li>
-      <li class="nav-item"><a href="#" class="nav-link" (click)= "onSelect('shopping-list')">Shopping list</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/recipes" >Recipies</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/Shoppinglist">Shopping list</a></li>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdowm-toggle" id="navbarDropdown" data-toggle="dropdown">
           Manage

@@ -23,14 +23,15 @@ export class ingredientsService{
       
         for (const i of auxIngredients){
         
-       const found = auxIngredients.find( ing => ing.name === i.name );
-        // console.log(found.amount);
-         if (found.amount>0){
-           var newcant= i.amount+found.amount;
-           this.ingredients.push(i.amount[newcant]);
-           console.log(newcant);
-         }else{        
-          console.log('agregado en la posicion '+this.ingredients.push(i));
+       const found =this.ingredients.find( Ingredient => Ingredient.name === i.name );
+        console.log(found);
+         if (found === undefined){
+          this.ingredients.push(i);}
+          else{
+            found.amount=found.amount+i.amount;
+          }
+         }
+        
+        this.ingredientsChanged.emit(this.ingredients.slice());
         }
-      }}
-}
+      }
