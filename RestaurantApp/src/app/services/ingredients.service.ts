@@ -17,11 +17,20 @@ export class ingredientsService{
        // console.log(this.ingredients);
       }
 
+      
       //Una vez obtenidos se debene guardar en el arreglo, cpn un foreach desde donde se obtendran con una constante i
       addIngredients(auxIngredients: Ingredient[]){
+      
         for (const i of auxIngredients){
-        //Aqui agregar el find y la condición
-          this.ingredients.push(i);
+        
+       const found = auxIngredients.find( ing => ing.name === i.name );
+        // console.log(found.amount);
+         if (found.amount>0){
+           var newcant= i.amount+found.amount;
+           this.ingredients.push(i.amount[newcant]);
+           console.log(newcant);
+         }else{        
+          console.log('agregado en la posicion '+this.ingredients.push(i));
         }
-      }
+      }}
 }
