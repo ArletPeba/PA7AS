@@ -23,7 +23,7 @@ export class ingredientsService{
       
         for (const i of auxIngredients){
         
-       const found =this.ingredients.find( Ingredient => Ingredient.name === i.name );
+       const found =this.ingredients.find( Ingredient => Ingredient.name === i.name ); //Buscar a i que es el objeto de la receta en el arreglo
         console.log(found);
          if (found === undefined){
           this.ingredients.push(i);}

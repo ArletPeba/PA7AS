@@ -13,13 +13,13 @@ recipeSelected: Recipe;
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    this.recipeService.recipeSelected
+    /*this.recipeService.recipeSelected
     .subscribe(
       (recipe:Recipe) =>{
       this.recipeSelected = recipe;
     }
 
-    ); //Subscribe para estar en escucha
+    ); //Subscribe para estar en escucha*/
   }
 
 }

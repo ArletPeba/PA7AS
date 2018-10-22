@@ -11,6 +11,8 @@ import { RecipiesItemComponent } from './component/recipies/recipies-list/recipi
 import { ShoppingEditComponent } from './component/shopping-list/shopping-edit/shopping-edit.component';
 import { ingredientsService } from './services/ingredients.service';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     RecipiesDetailComponent,
     RecipiesListComponent,
     RecipiesItemComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,

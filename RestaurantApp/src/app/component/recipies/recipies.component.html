@@ -3,9 +3,8 @@
     <app-recipies-list></app-recipies-list> <!--Enlaza al click y la receta!-->
   </div>
   <div class="col-md-7">
-    <app-recipies-detail [recipe]="recipeSelected" *ngIf="recipeSelected; else infoText"></app-recipies-detail>
-  <ng-template #infoText>
-    <p>Please select a recipe</p>
-  </ng-template>
+   <router-outlet>
+    
+   </router-outlet>
   </div>
 </div>
