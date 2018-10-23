@@ -13,7 +13,8 @@ export class RecipiesDetailComponent implements OnInit {
 recipe: Recipe;
 id: number;
   constructor(private recipeService: RecipeService, 
-              private route: ActivatedRoute){
+              private route: ActivatedRoute,
+              private router: Router){
   }
 
   ngOnInit() {
@@ -21,6 +22,9 @@ id: number;
       this.id=+param['id']; //el + lo convierte el textoe n numero entero
       this.recipe=this.recipeService.getRecipe(this.id);
     });
+  }
+  onEditRecipe(){
+this.router.navigate(['edit'], {relativeTo:this.route});
   }
 
 

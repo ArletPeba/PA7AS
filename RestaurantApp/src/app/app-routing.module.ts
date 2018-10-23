@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { RecipiesDetailComponent } from './component/recipies/recipies-detail/recipies-detail.component';
 import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
 
 const routes: Routes=[
     {
@@ -13,8 +14,9 @@ path:'', redirectTo: '/recipes', pathMatch: 'full' //Cuando esté vacio '', y no
 {
     path: 'recipes', component: RecipiesComponent, children:[
        { path:'', component:RecipeStartComponent},
-       { path: ':id', component: RecipiesDetailComponent} //Los dos puntos son para indicar que es un atributo
-
+       {path: 'new', component:RecipeEditComponent},
+       { path: ':id', component: RecipiesDetailComponent}, //Los dos puntos son para indicar que es un atributo
+        {path: ':id/edit', component:RecipeEditComponent}
     ]
 },
 {
