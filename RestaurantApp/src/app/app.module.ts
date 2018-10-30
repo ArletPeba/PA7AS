@@ -13,8 +13,7 @@ import { ingredientsService } from './services/ingredients.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
-
-
+import { FormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +29,8 @@ import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edi
   ],
   imports: [
     BrowserModule,
-   AppRoutingModule
+   AppRoutingModule,
+    FormsModule
   ],
   providers: [ingredientsService],
   bootstrap: [AppComponent]
