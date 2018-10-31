@@ -3,7 +3,7 @@ import { EventEmitter } from "@angular/core";
 import { Subject } from "rxjs";
 
 export class ingredientsService{
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject <number>();
   private  ingredients : Ingredient [] = [
         new Ingredient('Tomatoes', 5),
@@ -18,11 +18,11 @@ export class ingredientsService{
       }
       updateIngredient(index:number, ingredient: Ingredient){
         this.ingredients[index]=ingredient;
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
       }
       addIngredient(ingredient: Ingredient){
         this.ingredients.push(ingredient);
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
        // console.log(this.ingredients);
       }
 
@@ -41,6 +41,6 @@ export class ingredientsService{
           }
          }
         
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
         }
       }
