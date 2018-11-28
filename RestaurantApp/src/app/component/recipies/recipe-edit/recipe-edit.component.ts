@@ -64,7 +64,7 @@ export class RecipeEditComponent implements OnInit {
     }
   }
   onAddIngrediente() {
-    (<FormArray>this.recipeForm.get('ingredients')).push(
+    (<FormArray>this.recipeForm.get('ingredientes')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
         'amount': new FormControl(null, [
@@ -77,8 +77,10 @@ export class RecipeEditComponent implements OnInit {
 
   }
   onSubmit() {
-    const recipe = this.recipeForm.value;
-    const newRecipe = new Recipe(recipe.name, recipe.description, recipe.imagePath, recipe.ingredients);
+    //const recipe = this.recipeForm.value;
+    const newRecipe = new Recipe(this.recipeForm.value.name, this.recipeForm.value.description, this.recipeForm.value.imagePath, this.recipeForm.value.ingredientes);
+
+    //const newRecipe = new Recipe(recipe.name, recipe.description, recipe.imagePath, recipe.ingredients);
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, newRecipe);
     } else {

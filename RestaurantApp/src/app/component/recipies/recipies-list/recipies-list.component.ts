@@ -31,7 +31,8 @@ export class RecipiesListComponent implements OnInit {
   }
 
   onNewRecipe() {
-    this.router.navigate(['new'], { relativeTo: this.route });
+  
+    this.router.navigate(['new'], {relativeTo:this.route});
 
   }
 }
