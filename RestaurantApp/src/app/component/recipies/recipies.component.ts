@@ -6,11 +6,11 @@ import { RecipeService } from '../../services/recipe.service';
   selector: 'app-recipies',
   templateUrl: './recipies.component.html',
   styleUrls: ['./recipies.component.css'],
-  providers:[RecipeService]
+ // providers:[RecipeService]
 })
 export class RecipiesComponent implements OnInit {
 recipeSelected: Recipe;
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit() {
     /*this.recipeService.recipeSelected

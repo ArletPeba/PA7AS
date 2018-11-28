@@ -13,7 +13,8 @@ import { ingredientsService } from './services/ingredients.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RecipeService } from './services/recipe.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +26,17 @@ import { FormsModule } from '@angular/forms'
     RecipiesItemComponent,
     ShoppingEditComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+  
   ],
   imports: [
     BrowserModule,
    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule //para poder trabajar dinamicamente con los formularios
   ],
-  providers: [ingredientsService],
+  providers: [ingredientsService,RecipeService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

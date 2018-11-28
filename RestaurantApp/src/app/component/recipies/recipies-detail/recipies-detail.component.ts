@@ -23,13 +23,18 @@ id: number;
       this.recipe=this.recipeService.getRecipe(this.id);
     });
   }
-  onEditRecipe(){
-this.router.navigate(['edit'], {relativeTo:this.route});
-  }
+  
 
+  onEditRecipe(){
+    this.router.navigate(['edit'], {relativeTo:this.route});
+  }
 
   onAddToShoppingList(){
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 
+  onDeleteRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(["../"], {relativeTo: this.route})
+  }
 }

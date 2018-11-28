@@ -25,6 +25,10 @@ export class ingredientsService{
         this.ingredientsChanged.next(this.ingredients.slice());
        // console.log(this.ingredients);
       }
+      deleteIngredient(index: number){
+        this.ingredients.splice(index, 1);
+        this.ingredientsChanged.next(this.ingredients.slice());
+      }
 
       
       //Una vez obtenidos se debene guardar en el arreglo, cpn un foreach desde donde se obtendran con una constante i
