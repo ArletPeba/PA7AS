@@ -19,7 +19,7 @@ path:'', redirectTo: '/recipes', pathMatch: 'full' //Cuando esté vacio '', y no
        { path: ':id', component: RecipiesDetailComponent}, //Los dos puntos son para indicar que es un atributo
         {path: ':id/edit', component:RecipeEditComponent},
         {path: 'recipies', component: RecipiesComponent, canActivate: [AuthGuard]},
-        {path: ''}
+       
 
     ]
 },

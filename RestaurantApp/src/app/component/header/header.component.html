@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
+  
+  
   <a style="cursor: pointer;" class="navbar-brand">Recipies book</a>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav navbar-left">
+        
       <li class="nav-item"><a style="cursor: pointer;" class="nav-link" routerLinkActive="active" routerLink="/recipes" >Recipies</a></li>
       <li class="nav-item"><a style="cursor: pointer;" class="nav-link" routerLinkActive="active" routerLink="/Shoppinglist">Shopping list</a></li>
       <li class="nav-item dropdown">
@@ -16,6 +19,14 @@
           <a href="" class="dropdown-item">Fetch Data</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a href="" style="cursor: pointer;" class="nav-link" *ngIf="!authService.isUserLoggedIn()" routerLink="/signin"> 
+        Holaaaaaaa
+        </a>
+       </li>
+
+     
     </ul>
   </div>
+  
 </nav>
