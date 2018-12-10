@@ -20,4 +20,7 @@ return this.isloggedIn;
 isUserLoggedIn(){
   return this.isloggedIn;
 }
+logout(): boolean {
+  return this.isloggedIn = false;
+ }
 }

@@ -7,26 +7,30 @@ import { RecipiesDetailComponent } from './component/recipies/recipies-detail/re
 import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SigninComponent } from './auth/signin/signin.component';
 
 const routes: Routes=[
     {
 path:'', redirectTo: '/recipes', pathMatch: 'full' //Cuando esté vacio '', y no busque nada, 
 },
+
 {
-    path: 'recipes', component: RecipiesComponent, children:[
+    path: 'recipes', component: RecipiesComponent,canActivate: [AuthGuard], children:[
+
        { path:'', component:RecipeStartComponent},
        {path: 'new', component:RecipeEditComponent},
        { path: ':id', component: RecipiesDetailComponent}, //Los dos puntos son para indicar que es un atributo
         {path: ':id/edit', component:RecipeEditComponent},
-        {path: 'recipies', component: RecipiesComponent, canActivate: [AuthGuard]},
-       
+        
+      
 
     ]
 },
 {   
     path: 'Shoppinglist', component: ShoppingListComponent
    
-}
+},
+{path: 'Signin', component: SigninComponent}
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
