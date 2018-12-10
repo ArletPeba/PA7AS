@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RecipiesDetailComponent } from './component/recipies/recipies-detail/recipies-detail.component';
 import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes=[
     {
@@ -16,11 +17,15 @@ path:'', redirectTo: '/recipes', pathMatch: 'full' //Cuando esté vacio '', y no
        { path:'', component:RecipeStartComponent},
        {path: 'new', component:RecipeEditComponent},
        { path: ':id', component: RecipiesDetailComponent}, //Los dos puntos son para indicar que es un atributo
-        {path: ':id/edit', component:RecipeEditComponent}
+        {path: ':id/edit', component:RecipeEditComponent},
+        {path: 'recipies', component: RecipiesComponent, canActivate: [AuthGuard]},
+        {path: ''}
+
     ]
 },
-{
+{   
     path: 'Shoppinglist', component: ShoppingListComponent
+   
 }
 ];
 @NgModule({

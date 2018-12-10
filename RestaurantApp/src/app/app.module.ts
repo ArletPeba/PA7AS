@@ -15,6 +15,7 @@ import { RecipeStartComponent } from './component/recipies/recipe-start/recipe-s
 import { RecipeEditComponent } from './component/recipies/recipe-edit/recipe-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RecipeService } from './services/recipe.service';
+import { SigninComponent } from './auth/signin/signin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { RecipeService } from './services/recipe.service';
     ShoppingEditComponent,
     RecipeStartComponent,
     RecipeEditComponent,
+    SigninComponent,
   
   ],
   imports: [
