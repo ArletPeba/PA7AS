@@ -19,13 +19,13 @@
         <div class="col-12">
           <div class="form-group">
             <label for="imagePath">Image URL</label>
-            <input #imagePath type="text" class="form-control" id="imagePath" formControlName="imagePath" >
+            <input type="text" class="form-control" id="imagePath" formControlName="imagePath" #imagePath >
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <img  class="img-fluid" [src]="imagePath.value" alt="" >
+          <img [src]="imagePath.value" class="img-fluid"  alt="" >
 
         </div>
       </div>
@@ -39,7 +39,7 @@
       </div>
       <div class="row">
         <div class="col-12" formArrayName="ingredientes">
-          <div class="row"  *ngFor="let ingredientesCtrl of recipeForm.get('ingredientes').controls; let i=index" [formGroupName]="i" style="margin-top: 10px"
+          <div class="row"  *ngFor="let ingredientesCtrl of recipeForm.get('ingredients').controls; let i=index" [formGroupName]="i" style="margin-top: 10px"
           [formGroupName]="i" style="margin-top: 10px;">
             <div class="col-8">
               <input type="text" class="form-control"
