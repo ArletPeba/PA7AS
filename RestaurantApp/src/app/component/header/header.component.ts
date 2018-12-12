@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/guards/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,23 +9,21 @@ import { AuthService } from 'src/app/guards/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-@Output() featureSelected = new EventEmitter<string>();
-
-  private subscription: Subscription;
+  //@Output() featureSelected = new EventEmitter<string>();
+  private subs: Subscription;
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
- 
 
-//  onSelect(feature: string){
-  //  this.featureSelected.emit(feature);
+  //onSelect(feature: string){
+    //this.featureSelected.emit(feature);
   //}
 
   ngOnInit() {
-    this.onLogout();
-  }
-  onLogout(){
-    this.authService.logout();
-    this.router.navigate(['Signin'], {relativeTo:this.route});
+    this.onLogOut();
   }
 
+  onLogOut(){
+    this.authService.logout();
+    this.router.navigate(['auth']);
+  }
 
 }

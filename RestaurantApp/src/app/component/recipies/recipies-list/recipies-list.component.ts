@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Recipe } from '../recipe.model';
+import { Recipe} from '../recipe.model';
 import { RecipeService } from '../../../services/recipe.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import {Subscription} from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipies-list',
@@ -10,18 +10,11 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./recipies-list.component.css']
 })
 export class RecipiesListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<Recipe>(); //mandar al objeto seleccionado 
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[];
   private sure: Subscription
-  
-  
-  constructor(private recipeService: RecipeService,
-    private router: Router, //router para manipular las URL, agregarle un evento y lo mapeé
-    private route: ActivatedRoute) //route ver los elemntos de la url activa
-  {
 
-  }
-
+  constructor(private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
@@ -30,9 +23,8 @@ export class RecipiesListComponent implements OnInit {
     })
   }
 
-  onNewRecipe() {
-  
+  onNewRecipe(){
     this.router.navigate(['new'], {relativeTo:this.route});
-
   }
+
 }
